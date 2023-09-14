@@ -125,14 +125,9 @@ footer {
    z-index: 2;
    width: 1rem;
    height: 1rem;
-
    transition: all 0.1s linear;
-   -moz-transition: all 0.1s linear;
-   -webkit-transition: all 0.1s linear;
-   -o-transition: all 0.1s linear;
-
-   background: #71abfe;
-   border: 0.2rem solid #71abfe;
+   background: var(--color-white);
+   border: 0.2rem solid var(--color-white);
    border-radius: 50%;
    text-align: center;
    cursor: pointer;
@@ -149,8 +144,8 @@ footer {
 .slider #s3:checked ~ .slider-quotes .slider-dots dots-label:nth-of-type(3) span,
 .slider #s4:checked ~ .slider-quotes .slider-dots dots-label:nth-of-type(4) span,
 .slider #s5:checked ~ .slider-quotes .slider-dots dots-label:nth-of-type(5) span {
-   border-color: #71abfe;
-   background: #25282a;
+   border-color: var(--color-white);
+   background: var(--color-black);
 }
 
 .slider #s1:checked ~ .slider-quotes .slider-dots dots-label:nth-of-type(1) span,
@@ -197,7 +192,7 @@ footer {
 .slider-images,
 .quotes-wrapper {
    animation-play-state: running;
-   animation: item-autoplay-count ease-in-out 30s infinite;
+   animation: item-autoplay-count ease-in-out 40s infinite;
 }
 
 .slider-images:hover .slider-images,
@@ -211,7 +206,7 @@ footer {
 }
 
 .slider #s1:checked ~ .slider-wrapper .slider-images,
-.slider #s:checked ~ .slider-quotes .quotes .quotes-wrapper {
+.slider #s1:checked ~ .slider-quotes .quotes .quotes-wrapper {
    transform: translateX(0);
 }
 
@@ -231,6 +226,49 @@ footer {
 }
 
 .slider #s5:checked ~ .slider-wrapper .slider-images,
-.slider #s6:checked ~ .slider-quotes .quotes .quotes-wrapper {
+.slider #s5:checked ~ .slider-quotes .quotes .quotes-wrapper {
    transform: translateX(-400%);
+}
+
+/* Adaptive */
+
+@media (max-width: 1480px) {
+   .slider {
+      width: 50vw;
+   }
+}
+
+@media (max-width: 1024px) {
+   .slider {
+      width: 80vw;
+   }
+
+   .image {
+      max-height: 40rem;
+      height: auto;
+   }
+
+   .slider-quotes {
+      flex-direction: column-reverse;
+   }
+
+   .quotes {
+      align-self: start;
+   }
+
+   footer {
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 10vw;
+   }
+}
+
+@media (max-width: 768px) {
+   main {
+      padding: 3vh 3vw;
+   }
+
+   .slider {
+      width: 90vw;
+   }
 }
